@@ -1,21 +1,21 @@
 '''
 This is example configuration for Stratum server.
-Please rename it to settings.py and fill correct values.
+Please rename it to config.py and fill correct values.
 '''
 
 # ******************** GENERAL SETTINGS ***************
 
 # Enable some verbose debug (logging requests and responses).
-DEBUG = False
+DEBUG = True
 
 # Destination for application logs, files rotated once per day.
 LOGDIR = 'log/'
 
 # Main application log file.
-LOGFILE = None#'stratum.log'
+LOGFILE = 'stratum.log'
 
 # Possible values: DEBUG, INFO, WARNING, ERROR, CRITICAL
-LOGLEVEL = 'INFO'
+LOGLEVEL = 'DEBUG'
 
 # How many threads use for synchronous methods (services).
 # 30 is enough for small installation, for real usage
@@ -27,7 +27,7 @@ ENABLE_EXAMPLE_SERVICE = True
 # ******************** TRANSPORTS *********************
 
 # Hostname or external IP to expose
-HOSTNAME = 'localhost'
+HOSTNAME = '192.168.30.106'
 
 # Port used for Socket transport. Use 'None' for disabling the transport.
 LISTEN_SOCKET_TRANSPORT = 3333
@@ -47,9 +47,9 @@ LISTEN_WSS_TRANSPORT = None
 # Hostname and credentials for one trusted Bitcoin node ("Satoshi's client").
 # Stratum uses both P2P port (which is 8333 already) and RPC port
 BITCOIN_TRUSTED_HOST = 'localhost'
-BITCOIN_TRUSTED_PORT = 8332
-BITCOIN_TRUSTED_USER = 'user'
-BITCOIN_TRUSTED_PASSWORD = 'somepassword'
+BITCOIN_TRUSTED_PORT = 17116
+BITCOIN_TRUSTED_USER = 'bitcoinrpc'
+BITCOIN_TRUSTED_PASSWORD = '123456'
 
 # Use "echo -n '<yourpassword>' | sha256sum | cut -f1 -d' ' "
 # for calculating SHA256 of your preferred password
@@ -68,7 +68,7 @@ DATABASE_PASSWORD = '**empty**'
 
 # Pool related settings
 INSTANCE_ID = 31
-CENTRAL_WALLET = 'set_valid_addresss_in_config!'
+CENTRAL_WALLET = 'mvoZ4EfQG4DFCv9wAqszbAVtNykfSniZ3A'
 PREVHASH_REFRESH_INTERVAL = 5 # in sec
 MERKLE_REFRESH_INTERVAL = 60 # How often check memorypool
 COINBASE_EXTRAS = '/stratum/'
